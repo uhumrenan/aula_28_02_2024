@@ -3,18 +3,24 @@ import { View, Text, StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        backgroundColor: '#F8C390',
-        padding: 8,
-        width: '100%',
+        alignItems: 'center',
+        backgroundColor: '#e3f2fd',
+        padding: 18,
+        borderRadius: 20,
     },
-    paragraph: {
-        margin: 24,
-        fontSize: 18,
+
+    titulo: {
+        //margin: 24,
+        fontSize: 30,
         fontWeight: 'bold',
-        textAlign: 'center',
+        //textAlign: 'center',
         color: 'orange',
     },
+
+    image: {
+        width: '80%',
+        resizeMode: 'center',
+    }
 }) ;
 
 export default styles;

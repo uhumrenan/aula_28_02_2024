@@ -1,7 +1,7 @@
 //import styles from '../atv_1/styles';
 import { Text, View, Image} from 'react-native';
 
-import Ola from '.ola';
+import Ola from './ola';
 
 import styles from './styles';
 
@@ -15,6 +15,8 @@ export default function Atividade1 () {
             <Text style={styles.titulo}>
                 Atividade 1
             </Text>
+            <Ola>José Paulo</Ola> 
+            <Ola>Arthur</Ola> 
         </View>
     );
 }

@@ -21,6 +21,19 @@ const styles = StyleSheet.create({
         padding: 5,
         color: '#b71c1c',
     },
+
+    textoname:{
+        fontSize: 14,
+        color: '#b71c1c',
+        fontWeight: 'bold',
+        width: '80%',
+        marginBottom:20,
+    },
+
+    unir:{
+        flexDirection: 'row',
+    },
+
     input:{
         fontSize: 25,
         width: '80%',

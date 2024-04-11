@@ -5,45 +5,49 @@ import styles from './styles';
 
 export default function Atividade4() {
 
-        const [txtDigitado, setTxtDigitado] = useState ('');
+        const [txt1, setTxt1] = useState ('');
         const [txt2, setTxt2] = useState ('');
         const [txtTela, setTxtTela] = useState ('');
     
-        function atualizaTextoHandle(txt){
-            setTxtDigitado(txt);
-        }
-    
+         
         function handleExibeTexto(){
-            setTxtTela(txt2);
+            setTxtTela(`${txt1} ${txt2}`);
+            //setTxtTela (txt1 + ' ' + txt2);
+            setTxt1('');
             setTxt2('');
         }
     
         return (
-            <View style={styles.container}>
+           <View style={styles.container}>
                 <Text style = {styles.titulo}>Atividade 4</Text>            
-                <Text style = {styles.texto}>{txt2}{txtTela}</Text>
-    
+                            
+            <View style={styles.unir}>
+            <Text style = {styles.texto}>{txt1}</Text> 
+            <Text style = {styles.texto}>{txt2}</Text> 
+            </View>
+           
+            <Text style = {styles.textoname}>Nome</Text> 
+           
                 <TextInput 
                 style = {styles.input}
-                onChangeText={(valor) => setTxt2 (valor)}
+                onChangeText={(valor) => setTxt1 (valor)}
                 />
-    
-                  
-                <Text style = {styles.texto}>{txtTela}</Text>
-             
+                                   
+            <Text style = {styles.textoname}>Sobrenome</Text>    
+            
                 <TextInput 
                 style = {styles.input}
                 onChangeText={(vlr) => setTxt2 (vlr)}
                 />
-    
+            
+
                 <Pressable 
                 style={({ pressed }) => pressed ? [styles.botao, styles.botaoPress] : styles.botao}
                 onPress={() => handleExibeTexto()}
                 >
-                <Text style = {styles.txtBotao}>Exibir texto</Text>
+                <Text style = {styles.txtBotao}>Exibir nome completo</Text>
                 </Pressable>
-    
-    
+      
     
             </View>
     

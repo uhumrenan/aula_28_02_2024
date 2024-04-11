@@ -5,13 +5,15 @@ import { StyleSheet, View } from 'react-native';
 //import Atividade1 from './src/atv_1';
 //import Exemplo_3 from './src/ex_3';
 //import Atividade_3 from './src/atv_3';
+//import Atividade4 from './src/atv_4';
+//import Atividade4 from './src/atv_4professor';
 
-import Atividade4 from './src/atv_4professor';
+import Exemplo5 from './src/ex_5';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Atividade4/>
+      <Exemplo5/>
       <StatusBar style="auto" />
     </View>
   );

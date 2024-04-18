@@ -3,7 +3,7 @@ import {View, Pressable, Text, TextInput} from 'react-native';
 
 import styles from './styles';
 
-export default function Exemplo5() {
+export default function Atividade5() {
 
     const [isFocusN1, steIsFocusN1] = useState(false);
     const [isFocusN2, steIsFocusN2] = useState(false);
@@ -16,9 +16,27 @@ export default function Exemplo5() {
         setTotal(parseFloat(n1) + parseFloat(n2));
     }
 
+    function subtrai(){
+        setTotal(parseFloat(n1) - parseFloat(n2));
+    }
+
+    function multiplica(){
+        setTotal(parseFloat(n1) * parseFloat(n2));
+    }
+
+    function divide(){
+        setTotal(parseFloat(n1) / parseFloat(n2));
+    }
+
+    function limpa() {
+        setN1(0);
+        setN2(0);
+        setTotal('');
+    } 
+
     return (
     <View style={styles.container}>
-        <Text style={styles.titulo}> Exemplo 5 </Text>
+        <Text style={styles.titulo}> Atividade 5 </Text>
 
         <Text style={styles.txtSaida}> Calculadora Básica </Text>
 
@@ -44,7 +62,7 @@ export default function Exemplo5() {
 
         />
 
-        <Text style={styles.txtSaida}> + </Text>
+       <Text style={styles.txtSaida}> + </Text>
 
         <Text style={styles.textLabel}> 2º número </Text>
         <TextInput
@@ -85,8 +103,10 @@ export default function Exemplo5() {
             onFocus={() => steIsFocusTotaol(true)}
             onBlur={() => steIsFocusTotaol(false)}
             editable={false}
-            value={total ? parseFloat(total).toFixed(2) : ''}
+            value={total ? parseFloat(total).toFixed(2) : '0.00'}
         />
+
+            <View style={styles.alinhaBotao}>
 
         <Pressable
             onPress={() => soma()}
@@ -100,6 +120,58 @@ export default function Exemplo5() {
             <Text style={styles.textButton}> + </Text>
         </Pressable>
         
+        <Pressable
+            onPress={() => subtrai()}
+            style={
+                ({pressed}) => pressed ?
+                    [styles.button, styles.buttonTouch]
+                :
+                    styles.button
+            }
+        >
+            <Text style={styles.textButton}> - </Text>
+        </Pressable>
+
+        <Pressable
+            onPress={() => multiplica()}
+            style={
+                ({pressed}) => pressed ?
+                    [styles.button, styles.buttonTouch]
+                :
+                    styles.button
+            }
+        >
+            <Text style={styles.textButton}> * </Text>
+        </Pressable>
+
+        <Pressable
+            onPress={() => divide()}
+            style={
+                ({pressed}) => pressed ?
+                    [styles.button, styles.buttonTouch]
+                :
+                    styles.button
+            }
+        >
+            <Text style={styles.textButton}> / </Text>
+        </Pressable>
+
+        </View>    
+        
+        <Pressable
+            onPress={() => limpa ()}
+            style={
+                ({pressed}) => pressed ?
+                    [styles.button2, styles.buttonTouch]
+                :
+                    styles.button2
+            }
+        >
+            <Text style={styles.textButton}> Zerar </Text>
+        </Pressable>
+
+        
         </View>
+
     );
 }

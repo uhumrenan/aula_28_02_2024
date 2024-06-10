@@ -24,6 +24,10 @@ const styles = StyleSheet.create({
         color: 'lightgray',
         fontSize: 65,
         marginVertical: 15,
+    },
+    tmpImc:{
+       fontSize: 30,
+       color: 'lightgray',
     }
 });
 
